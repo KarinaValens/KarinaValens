@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500&display=swap");
 /* ---Variables--- */
 :root {
   /* colors */
   --primaryColor: #3d188c; /* Base color dark */
   --hightLight: #6241d8; /* headings */
+  --white: #ffffff;
   /*  --inactiveButton:;
    --hoverButton:; */
+  /* fonts */
+  --headings: "Space Grotesk", sans-serif;
 }
 /* ---Reset--- */
 
@@ -32,14 +36,14 @@ li {
 /* ---fonts--- */
 
 /* Display Space Grotesk 51px 3.188rem*/
-H1 {
-  font: Space Grotesk 38px 2.375rem;
+h1 {
+  font: 2.375rem var(--headings);
 }
-H2 {
-  font: Space Grotesk 28px 1.75rem;
+h2 {
+  font: 1.75rem var(--headings);
 }
-H3 {
-  font: Space Grotesk 21px 1.312rem;
+h3 {
+  font: 1.312rem var(--headings);
 }
 
 /* --- 320px mobil first style--- */
@@ -47,10 +51,11 @@ header {
   max-width: 100%;
 }
 nav {
+  margin-top: 4vh;
   width: 100%;
   display: flex;
   flex: 1 2 100vw;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -58,17 +63,8 @@ img {
   max-width: 60px;
 }
 
-/* ----NAV---- */
-nav a {
-  font-size: 1.4rem;
-}
-#navigation {
-  position: absolute;
-  right: -30vw;
-  top: 80px;
-  z-index: 10;
-  height: calc(100vh - 100px);
-}
+/* ----NAVIGATION---- */
+
 /* ----Burger Menu */
 #burgerMenu {
   display: flex;
@@ -111,6 +107,37 @@ nav a {
   transform: translateY(-11px);
   opacity: 0;
 }
+/* -----Nav Bar----- */
+
+#navigation {
+  position: absolute;
+  width: 100%;
+  right: -100vw;
+  top: 80px;
+  z-index: 10;
+  height: calc(100vh - 80px);
+  /* animating the navigation bar */
+  transition: translateX 2s;
+}
+
+nav a {
+  margin-top: 2vh;
+  font: bold 1rem var(--headings);
+  display: block;
+  padding: 7% 5%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  color: black;
+  /* animating the hover color change */
+  transition: color, background-color 0.2s 0.1s;
+}
+nav a:hover {
+  color: var(--white);
+  background-color: var(--hightLight);
+}
+nav .active {
+  color: var(--primaryColor);
+}
 
 /* .firstSectHome {
   background: radial-gradient(ellipse at bottom, #6241d8 7.81%, #a273c9 90.1%);
@@ -135,6 +162,9 @@ nav a {
 
 /* small tablet styles */
 @media screen and (min-width: 620px) {
+  #burgerMenu {
+    display: none;
+  }
 }
 
 /* large tablets and laptop styles */
