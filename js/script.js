@@ -1,9 +1,11 @@
-
-
-const burger = document.querySelector("#burgerMenu");
-
 function setupBurger() {
-    console.log("setupBurger");
-    burger.addEventListener("click", e => burger.classList.toggle("open"));
+    /* adding the class open and a toggle event listener to the burger menu and navigation bar  */
+    /* console.log("setupBurger"); */
+    const burger = document.querySelector("#burgerMenu");
+    const navBar = document.querySelector("#navigation");
+    burger.addEventListener("click", e => {
+        burger.classList.toggle("open");
+        navBar.classList.toggle("open");
+    });
 }
 setupBurger();

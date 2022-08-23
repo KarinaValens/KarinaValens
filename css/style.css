@@ -27,6 +27,7 @@ li {
 * {
   box-sizing: border-box;
   /* outline: 2px dotted greenyellow; */
+  overflow-x: hidden;
 }
 /* main {
   display: grid;
@@ -115,9 +116,13 @@ img {
   right: -100vw;
   top: 80px;
   z-index: 10;
+  background-color: var(--white);
   height: calc(100vh - 80px);
   /* animating the navigation bar */
-  transition: translateX 2s;
+  transition: transform 1s;
+}
+#navigation.open {
+  transform: translateX(-100vw);
 }
 
 nav a {
