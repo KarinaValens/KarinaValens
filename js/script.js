@@ -9,3 +9,6 @@ function setupBurger() {
     });
 }
 setupBurger();
+
+//Problems button movies is not interactive
+//Problems button no returning to index
