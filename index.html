@@ -22,25 +22,55 @@
             <ul id="navigation">
                 <li><a href="#">HOME</a> </li>
                 <li><a href="./html/about.html">ABOUT</a> </li>
-                <li><a href="./html/projects.html"> PROJECTS</a></li>
+                <li><a class="cta-btn" href="./html/projects.html"> PROJECTS</a></li>
             </ul>
         </nav>
         <div id="karinaSVG">
+            <h1>Karina Valens' Portafolio</h1>
             <h3 class="skills" id="ux_ui"> UX/UI DESIGNER</h3>
             <h3 class="skills" id="front_end"> FRONTEND DEVELOPER</h3>
             <h3 class="skills" id="mult_designer"> MULTIMEDIA DESIGNER</h3>
         </div>
 
         <div id="karina_title">
-            <h1>Karina Valens' Portafolio</h1>
             <h2 id="name">Karin</h2>
             <h2 id="last-name">V<span id="letter-a">a</span>lens</h2>
         </div>
     </header>
     <main>
-        <section id="first-section">
+        <section id="about-section">
+            <article>
+                <div id="theme-overview">
+                    <h2>Design for Developers</h2>
+                    <p>In this theme I have developed the ability to make better UI designs. I have learned
+                        about color and fonts. How to chose, test and apply them.
+                        I have expanded my knowledge about conventions, and
+                        I really have enjoyed the animation modules.
+                    </p>
+                </div>
+            </article>
+            <article id="about-me-article">
+                <div id="about-me-text">
+                    <h2>About Me</h2>
+                    <p>My name is Karina Valens, I have been a Frontend Developer and Multimedia Design student at KEA
+                        in the last year and a
+                        half.
+                        Where my passion for; web development, animations and UI/UX design; has increased.
+                        Previously, I learned basic programing on my own and I fall in love with the subject, for that
+                        reason I decided to start with a formal education at KEA, changing in that way my career path.
+                        I am really looking forward to expanding my abilities in these subjects and apply that
+                        knowledge.
+                    </p>
+                    <a class="cta-btn" href="./html/about.html">Read more</a>
+                </div>
+                <figure id="about-me-fig"> <img class="project-img" src="./images/about-me.jpg" alt="Karina-Valens">
+                    <figcaption id="about-me-caption">This Is me</figcaption>
+                </figure>
+            </article>
+        </section>
 
-            <h2>SKILLS</h2>
+        <section id="skills-section">
+            <h2>Skills</h2>
             <div id="skills-list">
                 <div><img class="icon" src="./icons/html.png" alt=""> </div>
                 <div><img class="icon" src="./icons/css.png" alt=""> </div>
@@ -53,33 +83,35 @@
                 <div><img class="icon" src="./icons/website.png" alt=""> </div>
             </div>
         </section>
-        <section>
-            <!-- <h2>RECENT PROJECTS</h2>
-            <div>
-                <figure><img src="./images/SolomonSoundT.png" alt="">
-                    <figcaption>Solomon Sound Therapy</figcaption>
+
+        <section id="projects">
+            <h2>Recent Projects</h2>
+            <div id="projects-list">
+                <figure><img class="project-img" src="./images/SolomonSoundT.jpg" alt="Solomon-Sound-Therapy-Picture">
+                    <figcaption class="cta-btn">Solomon</figcaption>
+                </figure>
+                <figure><img class="project-img" src="./images/CustomiseMe.jpg" alt="CustomiseMe-Picture">
+                    <figcaption class="cta-btn">CustomiseMe</figcaption>
+                </figure>
+                <figure><img class="project-img" src="./images/Cinéfilos.jpg" alt="Cinéfilos-Picture">
+                    <figcaption class="cta-btn">Cinéfilos</figcaption>
                 </figure>
             </div>
-            <div>
-                <figure><img src="./images/CustomiseMe.png" alt="">
-                    <figcaption>Solomon Sound Therapy</figcaption>
-                </figure>
-
-
-            </div>
-            <div>
-                <figure><img src="./images/Cinéfilos.png" alt="">
-                    <figcaption>Solomon Sound Therapy</figcaption>
-                </figure>
-
-
-            </div> -->
         </section>
-
+        <section id="conclusion">
+            <h2>Conclutions</h2>
+            <p>I had cited this as conclusion before, when I finish the first semester at KEA:
+                <cite> “The more that I learn the more I realize how much I don't know” Albert Einstein.</cite>
+                My conclusion about the theme is that I have a long way to go…
+            </p>
+        </section>
     </main>
-    <footer></footer>
+    <footer>
+        <img id="logo" src="./images/logo.png" alt="logo">
+        <img class="icon" src="./icons/github.png" alt="">
+        <img class="icon" id="link" src="./icons/linkedin.svg" alt="">
+    </footer>
     <script src="./js/script.js"></script>
-    <script src="./js/animations.js"></script>
 
 </body>
 
