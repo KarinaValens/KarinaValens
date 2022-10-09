@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <img id="logo" src="./images/logo.png" alt="logo">
+            <img class="logo" src="./images/logo.png" alt="logo">
             <div id="burgerMenu">
                 <span></span>
                 <span></span>
@@ -22,7 +22,7 @@
             <ul id="navigation">
                 <li><a href="#">HOME</a> </li>
                 <li><a href="./html/about.html">ABOUT</a> </li>
-                <li><a class="cta-btn" href="./html/projects.html"> PROJECTS</a></li>
+                <li><a class="cta-btn" id="projects-btn" href="./html/projects.html"> PROJECTS</a></li>
             </ul>
         </nav>
         <div id="karinaSVG">
@@ -38,7 +38,7 @@
         </div>
     </header>
     <main>
-        <section id="about-section">
+        <div id="about-section">
             <article>
                 <div id="theme-overview">
                     <h2>Design for Developers</h2>
@@ -63,11 +63,12 @@
                     </p>
                     <a class="cta-btn" href="./html/about.html">Read more</a>
                 </div>
-                <figure id="about-me-fig"> <img class="project-img" src="./images/about-me.jpg" alt="Karina-Valens">
+                <figure id="about-me-fig" class="projects-information"> <img class="project-img"
+                        src="./images/about-me.jpg" alt="Karina-Valens">
                     <figcaption id="about-me-caption">This Is me</figcaption>
                 </figure>
             </article>
-        </section>
+        </div>
 
         <section id="skills-section">
             <h2>Skills</h2>
@@ -87,15 +88,18 @@
         <section id="projects">
             <h2>Recent Projects</h2>
             <div id="projects-list">
-                <figure><img class="project-img" src="./images/SolomonSoundT.jpg" alt="Solomon-Sound-Therapy-Picture">
-                    <figcaption class="cta-btn">Solomon</figcaption>
-                </figure>
-                <figure><img class="project-img" src="./images/CustomiseMe.jpg" alt="CustomiseMe-Picture">
-                    <figcaption class="cta-btn">CustomiseMe</figcaption>
-                </figure>
-                <figure><img class="project-img" src="./images/Cinéfilos.jpg" alt="Cinéfilos-Picture">
-                    <figcaption class="cta-btn">Cinéfilos</figcaption>
-                </figure>
+                <div class="projects-information"><img class="project-img" src="./images/SolomonSoundT.jpg"
+                        alt="Solomon-Sound-Therapy-Picture">
+                    <a href="" class="cta-btn">Solomon</a>
+                </div>
+                <div class="projects-information"><img class="project-img" src="./images/CustomiseMe.jpg"
+                        alt="CustomiseMe-Picture">
+                    <a href="" class="cta-btn">CustomiseMe</a>
+                </div>
+                <div class="projects-information"><img class="project-img" src="./images/Cinéfilos.jpg"
+                        alt="Cinéfilos-Picture">
+                    <a href="" class="cta-btn">Cinéfilos</a>
+                </div>
             </div>
         </section>
         <section id="conclusion">
@@ -107,7 +111,7 @@
         </section>
     </main>
     <footer>
-        <img id="logo" src="./images/logo.png" alt="logo">
+        <img class="logo" src="./images/logo.png" alt="logo">
         <img class="icon" src="./icons/github.png" alt="">
         <img class="icon" id="link" src="./icons/linkedin.svg" alt="">
     </footer>

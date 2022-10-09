@@ -21,7 +21,8 @@ body,
 p,
 a,
 ul,
-li {
+li,
+h3 {
   margin: 0%;
   padding: 0%;
   text-decoration: none;
@@ -93,8 +94,8 @@ header:hover {
   font: bold 1rem var(--font-headings);
   display: inline-block;
   position: absolute;
-  top: 4rem;
-  left: -1rem;
+  top: -10;
+  left: 0;
 }
 
 #ux_ui {
@@ -160,7 +161,7 @@ nav {
   opacity: 0;
 }
 /* -----Nav Bar----- */
-#logo {
+.logo {
   max-width: 60px;
 }
 #navigation {
@@ -176,7 +177,9 @@ nav {
 #navigation.open {
   transform: translateX(-40rem);
 }
-
+#projects-btn:hover {
+  background: linear-gradient(135deg, var(--color-primary2), var(--color-secondary1));
+}
 nav a {
   font: bold 1rem var(--font-headings);
   display: block;
@@ -188,7 +191,9 @@ nav a {
 }
 nav a:hover {
   color: var(--color-secondary1);
-  background-color: var(--color-primary2);
+  background: linear-gradient(135deg, var(--color-primary2), var(--color-secondary1));
+  box-shadow: 0 0 8px 0 #0000005e;
+  border-radius: 3px;
 }
 nav .active {
   color: var(--primaryColor);
@@ -251,6 +256,8 @@ nav .active {
   place-self: center;
 }
 #about-me-caption {
+  display: inline-block;
+  max-width: fit-content;
   margin: 0.5rem auto;
   padding: 0.5rem 1rem;
   font: bold 1rem var(--font-headings);
@@ -278,6 +285,9 @@ nav .active {
   backdrop-filter: blur(10px);
   box-shadow: 0 0 8px 0 #0000005e;
   border-radius: 3px;
+}
+.cta-btn:hover {
+  background: linear-gradient(135deg, var(--color-primary2), var(--color-secondary1));
 }
 #about-me-text .cta-btn {
   width: 7rem;
@@ -327,11 +337,10 @@ nav .active {
   margin-top: 2rem;
 }
 
-figure {
+.projects-information {
   margin: -2rem auto;
-  max-width: 17rem;
+  max-width: 20rem;
   aspect-ratio: 1/0.8;
-  padding: 0.5rem;
   border: 1px solid var(--color-secondary1);
   background-color: rgba(228, 225, 225, 0.477);
   backdrop-filter: blur(10px);
@@ -344,12 +353,13 @@ figure {
 .project-img {
   max-width: 100%;
   border-radius: 3px;
+  padding: 0.5rem;
 }
-figcaption {
+.projects-information .cta-btn {
   margin-top: 1rem;
   display: inline-block;
 }
-/* -------------------- // HOME FOOTER SECTION// --------------------------- */
+/* -------------------- //FOOTER SECTION// --------------------- */
 footer {
   margin-top: 4rem;
   display: flex;
@@ -360,9 +370,55 @@ footer {
   justify-content: space-between;
 }
 
-footer #logo {
+footer .logo {
   margin-right: 25vw;
 }
+
+/* ------------------------------- // PROJECTS LIST PAGE// ---------------------- */
+#projects-page {
+  text-align: center;
+}
+
+#project-detail-container {
+  position: absolute;
+  max-width: 100%;
+  padding: 0.5rem;
+  aspect-ratio: 1/0.8;
+  top: 0;
+  display: none;
+  z-index: 1;
+  border: 1px solid var(--color-secondary1);
+  background: var(--color-neutral2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 #0000005e;
+  border-radius: 3px;
+  text-align: left;
+}
+
+#project-name {
+  color: var(--color-primary1);
+  font-weight: bold;
+  margin: 0.5rem 0.8rem;
+}
+#project-detail-container p {
+  color: var(--color-neutral1);
+  font: bold 0.9rem var(--font-copy-text);
+  margin: 0.5rem 0.8rem;
+}
+.projects-information.project-page-info {
+  position: relative;
+  transform: rotate(0);
+  margin-top: 1rem;
+}
+
+.project-page-info:hover #project-detail-container {
+  display: block;
+}
+
+.figcap-projects-page {
+  margin: 0.6rem;
+}
+
 /* --------------------- // Media Queries// --------------------------- */
 
 /* small tablet styles */
@@ -438,13 +494,13 @@ footer #logo {
 
     margin-bottom: 3rem;
   }
-  figure {
+  #projects-information-page {
     margin: 0 auto;
     max-width: 20rem;
     aspect-ratio: 1/0.8;
   }
 
-  footer #logo {
+  footer .logo {
     margin-right: 55vw;
   }
 }

@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <img id="logo" src="../images/logo.png" alt="logo">
+            <img class="logo" src="../images/logo.png" alt="logo">
             <div id="burgerMenu">
                 <span></span>
                 <span></span>
@@ -22,29 +22,43 @@
             <ul id="navigation">
                 <li><a href="../index.html">HOME</a> </li>
                 <li><a href="./html/about.html">ABOUT</a> </li>
-                <li><a class="cta-btn" href="#"> PROJECTS</a></li>
+                <li><a class="cta-btn" id="projects-btn" href="#"> PROJECTS</a></li>
             </ul>
         </nav>
 
     </header>
     <main>
-        <section id="projects">
+        <section id="projects-page">
             <h2>Recent Projects</h2>
             <div id="projects-list">
-                <figure><img class="project-img" src="../images/SolomonSoundT.jpg" alt="Solomon-Sound-Therapy-Picture">
-                    <figcaption class="cta-btn">Solomon</figcaption>
+                <!--   <figure class="figure-projects-page"><img class="project-img" src="../images/SolomonSoundT.jpg"
+                        alt="Solomon-Sound-Therapy-Picture">
+                    <figcaption class="cta-btn figcap-projects-page">Solomon</figcaption>
                 </figure>
-                <figure><img class="project-img" src="../images/CustomiseMe.jpg" alt="CustomiseMe-Picture">
-                    <figcaption class="cta-btn">CustomiseMe</figcaption>
+                <figure class="figure-projects-page"><img class=" project-img" src="../images/CustomiseMe.jpg"
+                        alt="CustomiseMe-Picture">
+                    <figcaption class="cta-btn figcap-projects-page">CustomiseMe</figcaption>
                 </figure>
-                <figure><img class="project-img" src="../images/Cinéfilos.jpg" alt="Cinéfilos-Picture">
-                    <figcaption class="cta-btn">Cinéfilos</figcaption>
-                </figure>
+                <figure class="figure-projects-page"><img class=" project-img" src="../images/Cinéfilos.jpg"
+                        alt="Cinéfilos-Picture">
+                    <figcaption class="cta-btn figcap-projects-page">Cinéfilos</figcaption>
+                </figure> -->
+                <template id="template">
+                    <div class="projects-information project-page-info">
+                        <img class="project-img" src=" " alt="Cinéfilos-Picture">
+                        <h3 id="project-name">Project Name</h3>
+                        <div id="project-detail-container">
+                            <p>Project Description</p>
+                            <a href="" class="cta-btn figcap-projects-page">Cinéfilos</a>
+
+                        </div>
+                    </div>
+                </template>
             </div>
         </section>
     </main>
     <footer>
-        <img id="logo" src="../images/logo.png" alt="logo">
+        <img class="logo" src="../images/logo.png" alt="logo">
         <img class="icon" src="../icons/github.png" alt="">
         <img class="icon" src="../icons/linkedin.svg" alt="">
     </footer>
