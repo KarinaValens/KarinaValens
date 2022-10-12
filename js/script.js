@@ -11,10 +11,9 @@ const restioApiKey = {
 
 
 function init() {
-    
+
     loadJson();
     setupBurger();
-    startHomePageAnim();
 }
 
 async function loadJson() {
@@ -23,13 +22,10 @@ async function loadJson() {
 
     // when loaded, handleProjects
     handleProjects(projectsData);
-    console.log("projectsData", projectsData);
 }
 
 function handleProjects(projectsData) {
     projectsData.forEach(displayProject);
-    console.log("projectsData", projectsData);
-
 }
 
 function setupBurger() {
@@ -43,74 +39,61 @@ function setupBurger() {
     });
 }
 
-/* --------- //SKILLS// --------- */
-function startHomePageAnim() {
-    const skillUX = document.querySelector("#ux_ui");
-    const skillFE = document.querySelector("#front_end");
-    const skillMD = document.querySelector("#mult_designer");
-    const skillsKeyFrames = [
-        /* {
-                    transform: 'translate(0,15vw) scale(0, 0)',
-                    easing: 'ease-in'
-                }, */
-        {
-            transform: 'translate(-40vw,15vw) scale(0, 0)',
-            easing: 'ease-in'
-        }, {
-            transform: 'translate(-20vw,20vw) scale(0, 0)',
-        },
-        {
-            transform: 'translate(-10vw,25vw) scale(.3, .3)',
-        },
-        {
-            transform: 'translate(20vw,30vw) scale(1, 1)',
-            easing: 'ease-in'
-        },
-        {
-            transform: 'translate(30vw,25vw) scale(.9, .9)',
-        },
-        {
-            transform: 'translate(40vw,20vw) scale(.5,.5)'
-        },
-        {
-            transform: 'translate(50vw,15vw) scale(0)'
-        }
-    ];
-
-    const skillsProperties = {
-        duration: 6000,
-        iterations: Infinity,
-    }
-
-    skillUX.animate(skillsKeyFrames, skillsProperties);
-    setTimeout(() => {
-        skillFE.animate(skillsKeyFrames, skillsProperties)
-    }, 2000);
-    setTimeout(() => {
-        skillMD.animate(skillsKeyFrames, skillsProperties)
-    }, 4000);
-}
-
 
 //hacer a search filter for projects
 /* ----- //RETRIVE JSON DATA// ---------- */
 
 function displayProject(project) {
-    console.log(project);
+    /* ---- //Project Page// ------- */
     // 1.- Select the content from the template
     const template = document.querySelector("#template").content;
     // 2.- Clone the template
     const clone = template.cloneNode(true);
     // 3.- Populate the data
-    clone.querySelector(".figcap-projects-page").textContent = project.name;
-    clone.querySelector("img").src = project.img;
-    clone.querySelector("img").alt = project.name;
+    clone.querySelector("[data-field=project-img]").src = project.final_img;
+    clone.querySelector("[data-field=project-img]").alt = `Image of ${project.name}`;
     //on hover card
-    clone.querySelector("#project-name").textContent = project.name;
-    clone.querySelector("p").textContent = project.description;
+    clone.querySelector("[data-field=project-name]").textContent = project.name;
+    clone.querySelector("[data-field=project-description]").textContent = project.description;
+    //button link
+    /*     clone.querySelector("a").setAttribute("href", `./single-project.html?id=${project._id}`);
+     */
+    clone.querySelector("button").addEventListener("click", showProject)
+
+    function showProject() {
+        document.querySelector("#single-project").classList.add("open");
+        document.querySelector("#projects-list").classList.add("close");
+        document.querySelector("#close-popup").addEventListener("click", closePopup);
 
 
 
+        document.querySelector("#project-name").textContent = project.name;
+        document.querySelector("#project-mockup").src = project.mockup_img;
+        document.querySelector("[data-field=project-img]").alt = `Mockup image of ${project.name}`;
+        document.querySelector("#project-description").textContent = project.description;
+
+
+        document.querySelector("#design-img").src = project.pre_design_img;
+        document.querySelector("#design-img").alt = `Design image of ${project.name}`;
+        document.querySelector("#design-text").textContent = project.pre_design_description;
+
+        document.querySelector("#adj-design-img").src = project.adjust_design_img;
+        document.querySelector("#adj-design-img").alt = `Adjust design image of ${project.name}`;
+        document.querySelector("#adj-design-text").textContent = project.adjust_design_description;
+
+        document.querySelector("#test-design-img").src = project.testing_design_img;
+        document.querySelector("#test-design-img").alt = `Testing design image of ${project.name}`;
+        document.querySelector("#test-design-text").textContent = project.testing_design_description;
+
+        document.querySelector("#project-link").setAttribute("href", `${project.visit_site_link} "_blank`);
+        document.querySelector("#project-link").setAttribute("target", "_blank");
+    }
+
+    function closePopup() {
+        document.querySelector("#single-project").classList.remove("open");
+        document.querySelector("#projects-list").classList.remove("close");
+        document.querySelector("#close-popup").removeEventListener("click", closePopup);
+    }
     // 4.- Select the new parent element in the dom
     const parent = document.querySelector("#projects-list");
     // 5.- Appen  the child to the new parent element inside the Dom

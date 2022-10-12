@@ -21,12 +21,12 @@
             </div>
             <ul id="navigation">
                 <li><a href="#">HOME</a> </li>
-                <li><a href="./html/about.html">ABOUT</a> </li>
+                <li><a href="https://www.linkedin.com/in/karinavalenswebdeveloper/" target="_blank">ABOUT</a> </li>
                 <li><a class="cta-btn" id="projects-btn" href="./html/projects.html"> PROJECTS</a></li>
             </ul>
         </nav>
         <div id="karinaSVG">
-            <h1>Karina Valens' Portafolio</h1>
+            <h1 id="homepage-h1">Karina Valens' Portafolio</h1>
             <h3 class="skills" id="ux_ui"> UX/UI DESIGNER</h3>
             <h3 class="skills" id="front_end"> FRONTEND DEVELOPER</h3>
             <h3 class="skills" id="mult_designer"> MULTIMEDIA DESIGNER</h3>
@@ -61,12 +61,13 @@
                         I am really looking forward to expanding my abilities in these subjects and apply that
                         knowledge.
                     </p>
-                    <a class="cta-btn" href="./html/about.html">Read more</a>
+                    <a class="cta-btn" href="https://www.linkedin.com/in/karinavalenswebdeveloper/" target="_blank">Read
+                        more</a>
                 </div>
-                <figure id="about-me-fig" class="projects-information"> <img class="project-img"
-                        src="./images/about-me.jpg" alt="Karina-Valens">
-                    <figcaption id="about-me-caption">This Is me</figcaption>
-                </figure>
+                <div id="about-me-fig" class="projects-information">
+                    <img class="project-img" src="./images/about-me.jpg" alt="Karina-Valens">
+                    <p class="clear-caption">This Is me</p>
+                </div>
             </article>
         </div>
 
@@ -88,19 +89,16 @@
         <section id="projects">
             <h2>Recent Projects</h2>
             <div id="projects-list">
-                <div class="projects-information"><img class="project-img" src="./images/SolomonSoundT.jpg"
-                        alt="Solomon-Sound-Therapy-Picture">
-                    <a href="" class="cta-btn">Solomon</a>
-                </div>
-                <div class="projects-information"><img class="project-img" src="./images/CustomiseMe.jpg"
-                        alt="CustomiseMe-Picture">
-                    <a href="" class="cta-btn">CustomiseMe</a>
-                </div>
-                <div class="projects-information"><img class="project-img" src="./images/Cinéfilos.jpg"
-                        alt="Cinéfilos-Picture">
-                    <a href="" class="cta-btn">Cinéfilos</a>
-                </div>
-            </div>
+                <template id="single-template">
+                    <div class="projects-information">
+                        <img class="project-img" data-field="project-img" src="./images/SolomonSoundT.jpg"
+                            alt="Solomon-Sound-Therapy-Picture">
+                        <!--                         <a href="" class="cta-btn">Solomon</a>
+ -->
+                        <h2 data-field="project-name" class="clear-caption">Project</h2>
+
+                    </div>
+                </template>
         </section>
         <section id="conclusion">
             <h2>Conclutions</h2>
@@ -112,11 +110,16 @@
     </main>
     <footer>
         <img class="logo" src="./images/logo.png" alt="logo">
-        <img class="icon" src="./icons/github.png" alt="">
-        <img class="icon" id="link" src="./icons/linkedin.svg" alt="">
+        <div id="icons-footer-container">
+            <a href="https://github.com/KarinaValens"><img class="icon" src="./icons/github-white.png"
+                    alt="github link"></a>
+            <a href="https://www.linkedin.com/in/karinavalenswebdeveloper/"><img class="icon" src="./icons/linkedin.png"
+                    alt="linkeding"></a>
+        </div>
     </footer>
-    <script src="./js/script.js"></script>
-
+    <script src="./js/index.js"></script>
+    <!-- <script src="./js/script.js"></script>
+ -->
 </body>
 
 </html>

@@ -21,46 +21,78 @@
             </div>
             <ul id="navigation">
                 <li><a href="../index.html">HOME</a> </li>
-                <li><a href="./html/about.html">ABOUT</a> </li>
+                <li><a href="https://www.linkedin.com/in/karinavalenswebdeveloper/" target="_blank">ABOUT</a> </li>
                 <li><a class="cta-btn" id="projects-btn" href="#"> PROJECTS</a></li>
             </ul>
         </nav>
+        <h1>Recent Projects</h1>
+
 
     </header>
-    <main>
-        <section id="projects-page">
-            <h2>Recent Projects</h2>
+    <main id="project-main">
+
+        <section>
             <div id="projects-list">
-                <!--   <figure class="figure-projects-page"><img class="project-img" src="../images/SolomonSoundT.jpg"
-                        alt="Solomon-Sound-Therapy-Picture">
-                    <figcaption class="cta-btn figcap-projects-page">Solomon</figcaption>
-                </figure>
-                <figure class="figure-projects-page"><img class=" project-img" src="../images/CustomiseMe.jpg"
-                        alt="CustomiseMe-Picture">
-                    <figcaption class="cta-btn figcap-projects-page">CustomiseMe</figcaption>
-                </figure>
-                <figure class="figure-projects-page"><img class=" project-img" src="../images/Cinéfilos.jpg"
-                        alt="Cinéfilos-Picture">
-                    <figcaption class="cta-btn figcap-projects-page">Cinéfilos</figcaption>
-                </figure> -->
                 <template id="template">
                     <div class="projects-information project-page-info">
-                        <img class="project-img" src=" " alt="Cinéfilos-Picture">
-                        <h3 id="project-name">Project Name</h3>
+                        <img data-field="project-img" class="project-img" src=" " alt="Cinéfilos-Picture">
+                        <h3 data-field="project-name" class="project-name-style">Project Name</h3>
                         <div id="project-detail-container">
-                            <p>Project Description</p>
-                            <a href="" class="cta-btn figcap-projects-page">Cinéfilos</a>
-
+                            <p data-field="project-description" class="project-description">Project Description</p>
+                            <button class="cta-btn btn-projects-page">READ MORE</button>
                         </div>
                     </div>
                 </template>
             </div>
         </section>
+
+        <section id="single-project">
+            <h2 id="project-name" class="project-name-style">Project</h2>
+            <div id="mockup-div">
+                <img id="project-mockup" class="project-img"
+                    src="https://kvalens.dk/Projects_Img/Fonts_%26_Components/fonts%26components_mockup.png" alt="">
+                <h3>Description</h3>
+                <p id="project-description" class="project-description"></p>
+            </div>
+
+            <div>
+                <img id="design-img" src="" alt="">
+                <div>
+                    <h3>Design</h3>
+                    <p id="design-text" class="project-description"></p>
+                </div>
+            </div>
+
+            <div>
+                <img id="adj-design-img" src="" alt="">
+                <div>
+                    <h3>Adjusting Design</h3>
+                    <p id="adj-design-text" class="project-description"></p>
+                </div>
+            </div>
+
+            <div>
+                <img id="test-design-img" src="" alt="">
+                <div>
+                    <h3>Testing Design</h3>
+                    <p id="test-design-text" class="project-description"></p>
+                </div>
+            </div>
+            <p id="close-popup">X</p>
+
+            <a href=" " id="project-link" class="cta-btn btn-projects-page">Vistit Project Site</a>
+        </section>
+
+
     </main>
     <footer>
         <img class="logo" src="../images/logo.png" alt="logo">
-        <img class="icon" src="../icons/github.png" alt="">
-        <img class="icon" src="../icons/linkedin.svg" alt="">
+        <div id="icons-footer-container">
+            <a href="https://github.com/KarinaValens"><img class="icon" src="../icons/github-white.png"
+                    alt="github link"></a>
+            <a href="https://www.linkedin.com/in/karinavalenswebdeveloper/"><img class="icon"
+                    src="../icons/linkedin.png" alt="linkeding"></a>
+        </div>
     </footer>
     <script src="../js/script.js"></script>
 
