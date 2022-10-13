@@ -1,4 +1,11 @@
 "use strict";
+
+/* import {
+    inView,
+    animate
+} from "https://cdn.skypack.dev/motion"; */
+
+
 document.addEventListener("DOMContentLoaded", init)
 
 const url = "https://karinavalens-35ec.restdb.io/rest/portafolio";
@@ -39,10 +46,8 @@ function setupBurger() {
     });
 }
 
-
-//hacer a search filter for projects
+//maybe hacer a search filter for projects
 /* ----- //RETRIVE JSON DATA// ---------- */
-
 function displayProject(project) {
     /* ---- //Project Page// ------- */
     // 1.- Select the content from the template
@@ -75,6 +80,8 @@ function displayProject(project) {
 
         document.querySelector("#design-img").src = project.pre_design_img;
         document.querySelector("#design-img").alt = `Design image of ${project.name}`;
+        /*         document.querySelector("#design1").style.backgroundImage = `url(${project.pre_design_img})`;
+         */
         document.querySelector("#design-text").textContent = project.pre_design_description;
 
         document.querySelector("#adj-design-img").src = project.adjust_design_img;
@@ -82,11 +89,13 @@ function displayProject(project) {
         document.querySelector("#adj-design-text").textContent = project.adjust_design_description;
 
         document.querySelector("#test-design-img").src = project.testing_design_img;
+
         document.querySelector("#test-design-img").alt = `Testing design image of ${project.name}`;
         document.querySelector("#test-design-text").textContent = project.testing_design_description;
 
-        document.querySelector("#project-link").setAttribute("href", `${project.visit_site_link} "_blank`);
+        document.querySelector("#project-link").setAttribute("href", `${project.visit_site_link}`);
         document.querySelector("#project-link").setAttribute("target", "_blank");
+
     }
 
     function closePopup() {
