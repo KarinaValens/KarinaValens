@@ -441,6 +441,7 @@ footer {
   top: 1rem;
   right: 1rem;
   color: var(--color-accent1);
+  cursor: pointer;
 }
 #single-project-pop-up {
   background: var(--color-gradient);

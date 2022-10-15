@@ -99,7 +99,7 @@ function displayProject(project) {
     }
 
     function closePopup() {
-        document.querySelector("#single-project").classList.remove("open");
+        document.querySelector("#single-project-pop-up").classList.remove("open");
         document.querySelector("#projects-list").classList.remove("close");
         document.querySelector("#close-popup").removeEventListener("click", closePopup);
     }
