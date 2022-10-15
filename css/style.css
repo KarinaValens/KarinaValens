@@ -35,7 +35,7 @@ body {
 /* ---Basic Style--- */
 * {
   box-sizing: border-box;
-  outline: 2px dotted red;
+  /* outline: 2px dotted red; */
 }
 body {
   display: flex;
@@ -84,6 +84,9 @@ header {
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.1, 0.4, 0.5, 0.1);
   margin-bottom: 2rem;
+}
+#projects-page-header {
+  margin-bottom: 0;
 }
 header:hover {
   background: linear-gradient(#6241d8 7.81%, #a273c9 90.1%);
@@ -219,7 +222,7 @@ nav .active {
   border: 1px solid var(--color-secondary1);
   background: var(--color-neutral2);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 0 8px 32px 0 hsla(0, 0%, 0%, 0.37);
   border-radius: 3px;
 }
 #name,
@@ -257,16 +260,12 @@ nav .active {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 4rem;
 }
-#about-me-fig {
-  max-width: 20rem;
-  aspect-ratio: 1/1;
-  place-self: center;
-}
 .clear-caption {
+  width: fit-content;
   display: inline-block;
   position: relative;
   margin: 0.5rem auto;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem;
   font: bold 1rem var(--font-headings);
   color: var(--color-primary1);
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.37);
@@ -290,7 +289,8 @@ nav .active {
   box-shadow: 0 0 8px 0 #0000005e;
   border-radius: 3px;
 }
-.cta-btn:hover {
+.cta-btn:hover,
+.clear-caption:hover {
   background: linear-gradient(135deg, var(--color-primary2), var(--color-secondary1));
 }
 #about-me-text .cta-btn {
@@ -318,15 +318,16 @@ nav .active {
 }
 /* -------------------- // HOME PROJECTS SECTION// --------------------------- */
 #projects {
-  max-height: fit-content;
-  padding: 2rem auto;
+  max-height: max-content;
+  padding: 1rem 0 5rem;
   background: var(--color-gradient);
   text-align: center;
   margin-bottom: 2rem;
 }
 
-#projects-list h2 {
-  margin-bottom: 3rem;
+#projects h2 {
+  margin-bottom: 6rem;
+  color: var(--color-secondary2);
 }
 
 #projects-list {
@@ -335,10 +336,6 @@ nav .active {
   margin: 1.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, max-content));
-}
-
-#projects-list figure:first-child {
-  margin-top: 2rem;
 }
 
 .projects-information {
@@ -441,35 +438,42 @@ footer {
 #close-popup {
   font: bolder 2rem var(--font-headings);
   position: absolute;
-  top: -2rem;
+  top: 1rem;
   right: 1rem;
   color: var(--color-accent1);
 }
-#single-project {
-  background-color: var(--color-secondary1);
+#single-project-pop-up {
+  background: var(--color-gradient);
   display: none;
   position: absolute;
   top: 0;
-  padding-bottom: 3rem;
+  padding: 2rem 0;
 }
 
-#single-project.open {
+#single-project-pop-up.open {
   display: block;
 }
-#single-project h2,
-#single-project h3 {
+#single-project-pop-up h2,
+#single-project-pop-up h3 {
   text-align: center;
 }
-#single-project > div {
+#single-project-pop-up > div {
   max-width: 85%;
-  margin: 2rem auto;
+  margin: auto;
+}
+#single-project-pop-up > div:not(#mockup-div) {
+  margin-top: 5rem;
 }
 
-#single-project h3 {
+#single-project-pop-up div:last-child {
+  margin-bottom: 3rem;
+}
+
+#single-project-pop-up h3 {
   margin-bottom: 1rem;
   color: var(--color-primary1);
 }
-#single-project img:not(#project-mockup) {
+#single-project-pop-up img:not(#project-mockup) {
   max-width: 100%;
   border-radius: 10px;
   box-shadow: 0 0 8px 2px hsla(0, 0%, 0%, 0.369);
@@ -484,9 +488,16 @@ footer {
 }
 .design-description {
   padding: 0.5rem;
-  background: hsla(0, 2%, 12%, 0.397);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: hsla(0, 1%, 60%, 0.358);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 hsla(0, 0%, 0%, 0.37);
+  border: 1px solid var(--color-neutral2);
   border-radius: 5px;
+}
+
+#project-link {
+  margin-left: 3rem;
+  padding: 0.7rem 3rem;
 }
 
 /* --------------------- // Media Queries// --------------------------- */
@@ -572,7 +583,7 @@ footer {
 
   /* --------- // Single Project Section// ----------------- */
 
-  #single-project > div:not(#mockup-div) {
+  #single-project-pop-up > div:not(#mockup-div) {
     display: flex;
     max-width: 80%;
     margin: 2rem auto;
@@ -580,7 +591,7 @@ footer {
     align-items: center;
     gap: 2rem;
   }
-  #single-project img {
+  #single-project-pop-up img {
     min-width: 60%;
   }
   #mockup-div {
@@ -590,8 +601,9 @@ footer {
     max-width: 60%;
     justify-self: centerS;
   }
-  #close-popup {
-    top: 0;
+  #project-link {
+    margin-left: 7rem;
+    padding: 0.7rem 4rem;
   }
   footer .logo {
     margin-right: 55vw;

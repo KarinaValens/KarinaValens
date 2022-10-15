@@ -66,7 +66,7 @@ function displayProject(project) {
     clone.querySelector("button").addEventListener("click", showProject)
 
     function showProject() {
-        document.querySelector("#single-project").classList.add("open");
+        document.querySelector("#single-project-pop-up").classList.add("open");
         document.querySelector("#projects-list").classList.add("close");
         document.querySelector("#close-popup").addEventListener("click", closePopup);
 
