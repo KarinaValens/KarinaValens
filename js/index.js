@@ -1,11 +1,12 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", init)
 
-const urlIndex = "https://karinavalens-35ec.restdb.io/rest/portafolio";
-const restioApiKeyIndex = {
-    headers: {
-        "x-apikey": "62838b6de8128861fcf3d3b6",
-    },
+const url = "https://pfgscytowfvxabrpcxym.supabase.co/rest/v1/portfolio";
+const headers = {
+    apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmZ3NjeXRvd2Z2eGFicnBjeHltIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY1OTg5MTcsImV4cCI6MTk4MjE3NDkxN30.bgLR1zZm8um7UTaebly3sZtu6dKDNsxb8eTZAYFoAAM',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmZ3NjeXRvd2Z2eGFicnBjeHltIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY1OTg5MTcsImV4cCI6MTk4MjE3NDkxN30.bgLR1zZm8um7UTaebly3sZtu6dKDNsxb8eTZAYFoAAM',
+    'Content-Type': 'application/json',
+    Prefer: 'return=representation'
 };
 
 function init() {
@@ -14,10 +15,16 @@ function init() {
     startHomePageAnim();
 }
 async function loadJson() {
-    const res = await fetch(urlIndex, restioApiKeyIndex);
+    const options = {
+        method: "GET",
+        headers: headers,
+    }
+
+    const res = await fetch(url, options);
     const projectsData = await res.json();
 
-    // when loaded, handleProjects
+
+    // when loaded, projectsCards
     projectsCards(projectsData);
 }
 

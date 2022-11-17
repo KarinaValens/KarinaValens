@@ -28,9 +28,6 @@ h3 {
   text-decoration: none;
   list-style: none;
 }
-body {
-  overflow-x: hidden;
-}
 
 /* ---Basic Style--- */
 * {
@@ -40,6 +37,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 main {
   display: grid;
@@ -501,6 +499,9 @@ footer {
   padding: 0.7rem 3rem;
 }
 
+#test-design-div.close {
+  display: none;
+}
 /* --------------------- // Media Queries// --------------------------- */
 
 /* small tablet styles */
