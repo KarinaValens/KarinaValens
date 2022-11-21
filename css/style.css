@@ -241,15 +241,8 @@ nav .active {
   color: #fff;
 }
 /* -------------------- // HOME ABOUT SECTION// --------------------------- */
-#theme-overview,
-#conclusion {
-  max-width: 80%;
-  margin: auto;
-}
 
-#about-me-article {
-  background: linear-gradient(100deg, var(--color-accent1), var(--color-neutral2));
-}
+
 #about-section article {
   max-width: 100%;
   padding: 1rem 2rem;
@@ -268,8 +261,11 @@ nav .active {
   color: var(--color-primary1);
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.37);
   border-radius: 3px;
+  color: var(--color-accent1);
 }
-
+.clear-caption:hover {
+  color: var(--color-accent2);
+}
 #about-me-text {
   display: flex;
   flex-direction: column;
@@ -318,10 +314,13 @@ nav .active {
 #projects {
   max-height: max-content;
   padding: 1rem 0 5rem;
-  background: var(--color-gradient);
+  background: hsla(267, 93%, 12%, 0.589) url(../images/lilla.jpg) no-repeat center;
+  background-size: cover;
+  background-blend-mode: multiply;
+
   text-align: center;
-  margin-bottom: 2rem;
-}
+/*   margin-bottom: 2rem;
+ */}
 
 #projects h2 {
   margin-bottom: 6rem;
@@ -340,11 +339,16 @@ nav .active {
   margin: -2rem auto;
   max-width: 20rem;
   aspect-ratio: 1/0.8;
-  border: 1px solid var(--color-secondary1);
-  background-color: rgba(228, 225, 225, 0.477);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.301), rgba(237, 229, 229, 0.123));
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border-radius: 3px;
+  /* border: 1px solid var(--color-secondary1);
+  background: var(--color-neutral2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 hsla(0, 0%, 0%, 0.37);
+  border-radius: 3px; */
   transform: rotate(-15deg);
   text-align: center;
   border-radius: 8px;
@@ -360,7 +364,6 @@ nav .active {
 }
 /* -------------------- //FOOTER SECTION// --------------------- */
 footer {
-  margin-top: 4rem;
   display: flex;
   flex-direction: row;
   background-color: var(--color-primary2);
@@ -574,9 +577,10 @@ footer {
   }
   #projects-list {
     margin-top: 4rem;
-
     margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, max-content));
   }
+
   #projects-information-page {
     margin: 0 auto;
     max-width: 20rem;

@@ -98,7 +98,7 @@ function displayProject(project) {
             //remember to remove the class after the pop-up close
         }
 
-        document.querySelector("#project-link").setAttribute("href", `${project.visit_site_link}`);
+        document.querySelector("#project-link").setAttribute("href", `${project.site_link}`);
         document.querySelector("#project-link").setAttribute("target", "_blank");
 
     }
